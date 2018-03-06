@@ -17,7 +17,7 @@ public class Exercise_07 {
         double factor = 1;
         boolean sign = false;
 
-        for(int i = 0, x = 3; i < 1000000; i++, x+=2){
+        for(int i = 0, x = 3; i < 90000000; i++, x+=2){
             if(sign){
                 factor += (1.0 / x);
             } else {

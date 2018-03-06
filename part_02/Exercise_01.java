@@ -15,6 +15,16 @@ import java.util.Scanner;
  */
 
 public class Exercise_01 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a temperature in °C:");
+        double tempC = scanner.nextDouble();
+
+        double tempF = 9 * (tempC / 5) + 32;
+
+        System.out.println( tempC+" degrees celsius are " + tempF + " degrees fahrenheit");
+
+    }
 
 
 }

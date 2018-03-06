@@ -9,6 +9,14 @@ package part_02;
  */
 public class Exercise_09 {
 
+    public static void main(String[] args) {
+        char alph = 90;
+        do{
+            System.out.print(alph + " ");
+            alph--;
+        } while(alph > 64);
+    }
+
 }
 
 

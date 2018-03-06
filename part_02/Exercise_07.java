@@ -14,6 +14,17 @@ import java.util.Scanner;
  */
 public class Exercise_07 {
 
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter an ammount of minutes");
+        int minutes = scanner.nextInt();
+        double minutesInDay = 60*24;
+        double minutesInYear = minutesInDay*365;
+        double days = (double)minutes/minutesInDay;
+        double years = (double)minutes/minutesInYear;
+        System.out.println(minutes + " are "+ days + " days or " + years + " years.");
+    }
+
 }
 
 

@@ -12,4 +12,22 @@ package part_01;
 
 public class Exercise_07 {
 
+    public static void main(String[] args) {
+
+        double factor = 1;
+        boolean sign = false;
+
+        for(int i = 0, x = 3; i < 1000000; i++, x+=2){
+            if(sign){
+                factor += (1.0 / x);
+            } else {
+                factor -= (1.0 / x);
+            }
+            sign = !sign;
+        }
+        double pi = 4*factor;
+        System.out.println("The value of PI is");
+        System.out.println(pi);
+    }
+
 }

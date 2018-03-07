@@ -22,7 +22,6 @@ public class Exercise_10 {
             if(divisors == 1){
                 System.out.print( i + " ");
             }
-            divisors = 0;
         }
     }
 

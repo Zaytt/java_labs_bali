@@ -16,7 +16,7 @@ public class Exercise_07 {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter an ammount of minutes");
+        System.out.println("Enter an amount of minutes");
         int minutes = scanner.nextInt();
         double minutesInDay = 60*24;
         double minutesInYear = minutesInDay*365;

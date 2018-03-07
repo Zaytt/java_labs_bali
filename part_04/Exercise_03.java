@@ -15,6 +15,21 @@ package part_04;
 public class Exercise_03 {
 
     public static void main(String[] strings) {
+        int multiDArray[][] = new int[10][10];
+
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 10; j++){
+                multiDArray[i][j] = i*10 + j;
+            }
+        }
+
+        for(int i = 0; i < 5; i++){
+            for(int j = 0; j < 10; j++){
+                System.out.print(multiDArray[i][j] + " ");
+            }
+            System.out.println();
+        }
+
 
     }
 }

@@ -1,49 +1,63 @@
 Answer the following questions:
 
 1) What is an array?
-
+    An array is a data structure that allows to store a fixed-size sequential collection of same type elements.
 2) What the code required to create (instantiate) a String array with size 10 named "cats"?
-
+    String catArray[] = new String[10];
 3) What is a multidimensional array?
-
+    It's an array that holds other arrays in its slots.
 4) What is the code required to create (instantiate) a 2-dimensional int array that is 6 high and 6 wide named "scores"?
-
+    int array[][] = new int[6][6];
 5) Using code, how do you retrieve a String that is the 10th item in a traditional array named dogs?
-
+    String dog = dogs[9];
 6) What is an ArrayIndexOutOfBoundsException?
-
+    It's an Exception that happens when an attempt to access array-index beyond the size of an array.
 7) Using one line of code, demonstrate how to retrieve the second to the last item from a int array.
-
+    int second2last = inaArray[intArray.length-1];
 8) What is the maximum allowable size of an array in Java?
-
+    As much as the max integer value, so like 2147483647
 9) What is a bubble sort?
-
+    It's the simplest way to arrange an array.
 10) How does a bubble sort work?
-
+    It works by using a loop to swap adjacent elements in an array to the right order sequentially.
 11) When might you use an irregular array? What is a good example of an irregular array?
-
+    An irregular array is used when you have different sized arrays that you would like to group together.
+    An example would be an array of classes id and each second array would be the id list of students in each class.
 12) Demonstrate how to iterate through an array, printing each value, using a for loop.
-
+    for(int i = 0; i < array.length; i++)
+    {
+        sout(array[i]);
+    }
 13) Demonstrate how to iterate through an array, printing each value, using a while loop.
-
+    int index = 0;
+    while(index < array.length){
+        sout(array[i]);
+        index++;
+    }
 14) What is a queue?
+    It's a data structure that holds values in the same way as an array but adds some functions as
+    insert and remove that help manipulate the elements in the array, usually in a FIFO order(First In Last Out).
 
 15) What are the two primary operations that a queue performs?
-
+    add() and remove()
 16) What is a stack?
-
+    It's a data structure similar to a queue that operates in a LIFO order. That means Last In First Out.
 17) What differentiates stacks and queues?
-
+    One operates FIFO and another one LIFO
 18) When would you use an enhanced for loop?
-
+    When you want to specifically iterate through every single element of an array.
 19) What is "The Collections Framework"? What classes does it include?
-
-20) How do you iterate over a two-dimensional array? Demonstrate using psuedo code.
-
+    It's a set of classes and interfaces that implement commonly reusable data structures.
+    It includes ThreeSet, LinkedList, ArrayList, Vector, Stack, PriorityQueue.
+20) How do you iterate over a two-dimensional array? Demonstrate using pseudo code.
+    for loop(i=0; i < outerArray.size; i++)
+        for loop(j=0; j < innerArray.size; i++)
 21) What is a String?
-
+    A String is an object that holds alphanumeric values; it is effectively a sequence of characters.
 22) What are a few common methods for operating on Strings?
-
+    length(), charAt(), substring()
 23) What does "Strings are immutable" mean?
-
+    That you cannot change the order of the characters in a String.
 24) Using the CLI, how do you invoke a Java application and provide two parameters to the main method?
+    typing java then the name of the application followed by the parameters, separated by a space.
+    Like this  >java javaApp par1 par2

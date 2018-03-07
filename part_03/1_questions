@@ -3,64 +3,76 @@ Answer the following questions
 
 
 1) What is an instance variable?
-
+    An instance variable is a variable that is declared inside a class rather than inside a method.
+    This variable is accessible to all the methods inside the class.
 
 2) How do you create a new object?
-
+    Assigning a variable a new value using the keyword "new".
 
 3) After creating a new object, how do you set that objects instance variables?
-
+    Defining them in the constructor or by using a Setter methods.
 
 4) What is a reference variable? Why do you need to be careful with reference variables?
-
+    A reference variable is one that points to an object rather than to a value.
+    You need to be careful with them because you are manipulating another object through them.
 
 5) How many methods can you have in a class?
-
+    Many
 
 6) How do you exit a method at any point?
-
+    return;
 
 7) What is the method signature required to return an "int" from a method?
-
+    int method();
 
 8) Assuming "int num = 10", what is the syntax to return "num" from a method?
+    int method(){
+        return num;
+    }
 
 
 9) How do you pass a parameter to a method?
-
+    Writing it inside the parenthesis of a method.
+    void method(Type parameter)
 
 10) What is the method signature for a method named sum() that takes two int parameters and returns their sum as in int?
-
+    int sum(int a, int b)
 
 11) What is a constructor?
-
+    It's a public method inside a class that has the same name of such class and no return type.
+    It initializes an object and its used to set that objects instance variables values.
 
 12) How does Java treat a class without a constructor?
-
+    It assigns it a default empty constructor.
 
 13) What would the constructor for "public class Animal" look like?
-
+    public Animal(){
+    }
 
 14) What is the effect of passing parameters to a constructor?
-
+    They are used to give a certain value to the instance variables of the class.
 
 15) When should you pass parameters to a constructor?
-
+    When you want to set the object in a particular way.
 
 16) What does the finalize() method do?
-
+    It's a method used by the JVM garbage collector when it determine that there are no more references to an object.
 
 17) What does the "this" keyword do?
-
+    It makes a reference to the class that is being used.
 
 18) When should you use the "this" keyword?
-
+    When trying to differentiate from two variables that have the same name, but operate on different scopes.
 
 19) Write an example of the "this" keyword in action.
+    public Animal(String name){
+        this.name = name;
+    }
 
-
-20.) EXplain the difference between static and non-static variables.
-
+20.) Explain the difference between static and non-static variables.
+    A static variable is accessible to all the instances of the same class and they also share the value of the variable.
+    A non static variable is one that is used only by the the object of a class.
 
 21.) Explain the difference between static and non-static methods.
-
+    A static method belongs to a class rather than to an object of a class.
+    A static method can be called without instancing an object of a class, calling a class instead.

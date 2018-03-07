@@ -9,3 +9,33 @@ package part_03;
 
  */
 
+public class Exercise_02{
+    public static void main(String[] args) {
+
+        int intArray[] = {1,2,3,4,5,6,7,8,9,10};
+        System.out.print("Given an array of {");
+        for (int x: intArray) {
+            System.out.print(x + ", ");
+        }
+        System.out.println("}");
+        System.out.println("Their average is " + average(intArray));
+        System.out.println("Their sum is " + average(intArray));
+    }
+
+    static double  average(int intArray[]){
+        int sum = 0;
+        for (int x: intArray) {
+            sum += x;
+        }
+        return (double)sum/intArray.length;
+    }
+
+    static int summatory(int intArray[]){
+        int sum = 0;
+        for (int x: intArray) {
+            sum += x;
+        }
+
+        return sum;
+    }
+}

@@ -18,18 +18,37 @@ class Exercise_06 {
         long totalMilliseconds = System.currentTimeMillis();
 
         // Get total seconds since midnight, 1/1/1970
-
+        long totalSeconds = totalMilliseconds/1000;
         // Get the current second within the minute within the hour
-
+        int secondsWithinHour = (int)(totalSeconds % 3600);
+        int currentSecond = secondsWithinHour % 60;
         // Get total minutes
-
+        long totalMinutes = totalSeconds/60;
         // Get the current minute in the hour
-
+        int currentMinute = (int)(totalMinutes % 60);
         // Get the total hours
-
+        long totalHours = totalMinutes/60;
         // Get the current hour
+        //This is the current hour in GMT
+        int gmtTime = (int)(totalHours%24);
+
+        //Apply the timezone difference
+        int currentHour = gmtTime + (int)timeZoneChange;
+
+        //This is the hour int the desired time zone keeping it in a 24 hour
+        currentHour = (currentHour < 0) ? 24-Math.abs(currentHour) : currentHour;
+
+
+        //Create a string to show "+" in the time when positive time zone adjustment
+        String timeZ = (timeZoneChange > 0 ) ? "+"+timeZoneChange : ""+timeZoneChange;
 
         // Display results using a 12 hour clock, include AM or PM
+        System.out.print("Time in GMT" + timeZ + " : " );
+
+        if(currentHour/12 > 0)
+            System.out.println(currentHour%12 + ":" + currentMinute + ":" +currentSecond + " P.M.");
+        else
+            System.out.println(currentHour%12 + ":" + currentMinute + ":" +currentSecond +" A.M.");
 
     }
 }

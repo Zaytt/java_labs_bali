@@ -46,8 +46,6 @@ class Stack{
             throw new EmptyStackException();
         }
 
-
-
     }
 
     public void push(char c){

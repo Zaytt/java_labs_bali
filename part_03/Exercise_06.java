@@ -45,10 +45,17 @@ class Exercise_06 {
         // Display results using a 12 hour clock, include AM or PM
         System.out.print("Time in GMT" + timeZ + " : " );
 
-        if(currentHour/12 > 0)
-            System.out.println(currentHour%12 + ":" + currentMinute + ":" +currentSecond + " P.M.");
-        else
-            System.out.println(currentHour%12 + ":" + currentMinute + ":" +currentSecond +" A.M.");
+        //AM or PM
+        String ampm = (currentHour/12 > 0) ? "P.M." : "A.M.";
 
+        System.out.println(zeroFormat(currentHour%12) + ":" + zeroFormat(currentMinute )+ ":" +
+                zeroFormat(currentSecond) +" " + ampm);
+
+    }
+
+    //Just adds a zero before de hour if it is less than 2 digits.
+    public static String zeroFormat(int time){
+        String newTime = (time < 10 ) ? "0"+time : ""+time;
+        return newTime;
     }
 }

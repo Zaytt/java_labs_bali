@@ -8,3 +8,63 @@ package part_05;
  * within each instance of Class_02 to modify Class_02's private instance variables.
  *
  */
+
+public class Exercise_04 {
+    //Create multiple instances of Class02
+    public static void main(String[] args) {
+        Classroom classroom1 = new Classroom("Java Fundamentals");
+        Classroom classroom2 = new Classroom("Advanced Java", "Ryan");
+        Classroom classroom3 = new Classroom("Super Advanced Java","Profesor X", 10);
+
+        classroom1.setTeacher("Caden");
+        classroom2.setStudents(12);
+        classroom3.setTeacher("John Johnson");
+
+    }
+
+}
+
+class Classroom{
+    private String teacher;
+    private String courseName;
+    private int students;
+
+    public Classroom(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public Classroom(String teacher, String courseName) {
+        this.teacher = teacher;
+        this.courseName = courseName;
+    }
+
+    public Classroom(String teacher, String courseName, int students) {
+        this.teacher = teacher;
+        this.courseName = courseName;
+        this.students = students;
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
+
+    public String getCourseName() {
+        return courseName;
+    }
+
+    public void setCourseName(String courseName) {
+        this.courseName = courseName;
+    }
+
+    public int getStudents() {
+        return students;
+    }
+
+    public void setStudents(int students) {
+        this.students = students;
+    }
+}

@@ -7,3 +7,22 @@ package part_05;
  * out "Hello Recursion!" 10 times.
  *
  */
+
+class Recursion{
+    public static void main(String[] args) {
+
+        Recursion recursion = new Recursion();
+
+        recursion.recursiveMethod(10);
+
+    }
+
+    public void recursiveMethod(int count){
+        if(count > 0 ){
+
+            System.out.println("Hello Recursion!");
+            recursiveMethod(count-1);
+        }
+    }
+
+}

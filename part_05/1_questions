@@ -1,58 +1,96 @@
 Answer the following:
 
 1) What are the access control modifiers (acm) provided in Java?
-
+    public, protected, private and the default(no modifier) package-protected
 2) Briefly explain each acm and how they differentiate from each other?
+    Each modifier determines who can access a class properties.
+    Modifier 	Class 	Package 	Subclass 	World
+    public 	    Y 	       Y 	        Y 	      Y
+    protected 	Y 	       Y 	        Y 	      N
+    no modifier Y 	       Y 	        N 	      N
+    private 	Y 	       N 	        N 	      N
 
 3) Why do we use acm's?
-
+    They are used to make sure that only the right classes can access another class properties.
 4) What is the risk of not using acm's?
-
+    That other classes could modify a class variables in a way that was not intended in the first place.
 5) Write a method signature that receives an object of type "Car" as a parameter.
-
+    method(Car car);
 6) Write a method signature that returns an object of type "Car".
-
+    Car method()
 7) What is a very important consideration to keep in mind when passing objects (hint: by reference) from one
 method to another?
-
+    Parameter are passed by value in Java. Even objects. What happens when you pass an object as a parameter
+    is that you are actually passing the a copy of the value of the reference to that object,
+    not the original reference itself.
 8) What is method overloading?
+    Its when you define a method again but assigning it different parameters.
 
 9) Why is method overloading useful? (Hint: as compared to the implementation in the C language.)
+    It allows to give a method a specific or extra behavior depending on the parameters passed.
 
 10) How do you overload a method? What signifies that a method is being overloaded?
+    You overload a method by declaring it again with extra parameters. It means that there will be different ways
+    of calling that method.
 
 11) Below, by writing just the method signature, demonstrate overloading a method 3 times.
+    double average(int a, int b)
+    double average(int a, int b, int c)
+    double average(int array[])
 
 12) How do you overload a constructor? What signifies that a constructor is being overloaded?
+    It's similar to method overloading. It means that it will be different ways to initialize a class.
 
 13) Why do we overload constructors?
+    To give some extra functionality or specific behavior depending on the parameters passed.
 
 14) Below, by writing just the constructor signature, demonstrate overloading a constructor 3 times.
+    public Surfboard()
+    public Surfboard(double length)
+    public Surfboard(double length, String brand)
 
 15) What is recursion?
-
+    Recursion is the ability of a method to call itself to solve a problem.
 16) What important considerations must you keep in mind when using recursion?
+    That depending on the depth it could be very resource intensive and even cause the JVM to run out of memory if
+    it runs wild.
+    Given the overhead of calling a new method everytime, recursive methods can
+    run a little slower that iterative methods.
 
 17) How do you make a method recursive?
+    By calling it inside itself and returning a value.
 
 18) How do you escape a recursive method?
+    Returning all the way to the original method call.
 
 19) Explain what "static" is all about?
-
+    Static is when a class property is accessible without the need to create an object of that class.
+    It is accessible by just calling a class itself.
+    Also static variables are accessible also to all objects of the same class.
 20) When should you use "static"?
+    When you want to share a variable among the objects of a certain class.
 
 21) What differentiates static variables from instance variables?
+    Static variables are accessible to all objects of the same class while instance variables are accessible only to
+    the object itself.
 
 22) What is a the quicksort? Briefly describe how the quicksort works.
+    The quicksort is the fastest sorting algorith available so far.
+    It uses recursion to sort the elements of a collection.
 
 23) What is a nested, or inner, class?
-
+    It's a class that its defined inside another class, or even inside a method for that matter.
 24) What is the scope of a nested class?
-
+    Its scope is bounded by the class that contains the inner class, also called the outer class.
 25) What is a variable-arity method?
-
+    It makes a method able to receive a variable ammount of parameters.
+    Those methods are effectively passed as an array.
 26) What makes a variable-arity method unique? When should you use it?
-
+    It is unique in the way that it will receive a variable number of parameters.
+    It should be used when you can use a default value for the variables inside a method but also when you
+    just can receive them from the parameters if theres need to be more specific.
 27) What is the shorthand name for variable-arity?
-
+    Vararg
 28) Why important considerations must you keep in mind when using variable-arity methods? (hint: ambiguity)
+    Because of ambiguity. If an vararg method is overloaded an its parameters are not properly defined it
+    will cause an ambiguity error.

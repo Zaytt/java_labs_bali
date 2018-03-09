@@ -1,5 +1,7 @@
 package part_05;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
+
 /**
  * Write two classes. Class_01 should have the main(). Class_02 should have various instance variables. At least one of
  * must be static. Within class_01 create at least 3 instances of class_02. Set the instance variables of class_02. Then,
@@ -9,6 +11,7 @@ package part_05;
 
 class BaseballTeams {
 
+    private String name;
     private String league;
     private char division;
     static int numOfPlayers;
@@ -36,6 +39,12 @@ class BaseballTeams {
     public static void setNumOfPlayers(int numOfPlayers) {
         BaseballTeams.numOfPlayers = numOfPlayers;
     }
+
+    public String getName() { return name; }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
 
 
@@ -48,23 +57,38 @@ class TeamConstructor {
         BaseballTeams reds = new BaseballTeams();
         BaseballTeams rockies = new BaseballTeams();
 
+        BaseballTeams[] league = new BaseballTeams[4];
+        league[0] = blueJays;
+        league[1] = indians;
+        league[2] = reds;
+        league[3] = rockies;
 
+
+
+        blueJays.setName("Blue Jays");
         blueJays.setDivision('E');
         blueJays.setLeague("AL");
 
+        indians.setName("Indians");
         indians.setLeague("AL");
         indians.setDivision('C');
 
+        reds.setName("Red Socks");
         reds.setLeague("NL");
         reds.setDivision('C');
 
+        rockies.setName("Rockies");
         rockies.setLeague("NL");
         rockies.setDivision('W');
 
         BaseballTeams.numOfPlayers=32;
 
-        System.out.println("The Blue Jays have " + " " + BaseballTeams.numOfPlayers + " " + "players");
-        System.out.println("The Blue Jays are in the" + " " + blueJays.getLeague());
+        for (BaseballTeams team: league) {
+            System.out.println("The " + team.getName() + " have " + BaseballTeams.numOfPlayers + " " + "players");
+            System.out.println("The " + team.getName() + " are in the " + team.getLeague());
+        }
+
+
 
 
     }

@@ -1,26 +1,94 @@
 1) Describe the exception hierarchy.
-
+    The exception hierarchy begins with throwable which is then extended by both the Error and Exception classes.
+    Errors are errors that a program shouldn't expect to recover from, like running out of memory.
+    Exceptions are errors that a program can and expects to recover from like missing files or a failed DB connection.
+    Exception is further extended by the RuntimeException class which refers mostly to "Programming Errors" like
+    an index out of bounds.
 2) What is a try/catch statement?
-
+    Its a code block intended to catch exceptions. Inside the try a piece of code is run and if an exception happens
+    the program execution will be transferred to the catch part of the block, which will handle the exception gracefully.
 3) Why do we use try/catch statements?
-
+    To handle exceptions gracefully, that means without disrupting the flow of the application.
 4) Write a full example of a try/catch/finally statement that catches two distinct exceptions
 
+   try{
+        Thread.sleep(1000);
+        array[i] = value;
+   } catch(InterruptedException | ArrayIndexOutOfBonds e){
+        e.printStack();
+   }
+
 5) What does it mean to "throw" an exception? How does it work?
+    It means that a method can actually generate its own exception. It works by creating a Throwable object.
+    throw new Exception();
 
 6) What happens if your application encounters an exception and you don't catch it or throw it?
+    It will be terminated.
 
 7) When catching exception in an inheritance hierarchy, should you catch the subclass exception or the
 superclass exception first? Why?
-
+    You should catch the subclass first,
 8) Write a nested try/catch statement.
+    try{
+        //Code
+        try{
+            //More code
+            try{
+                //Even more code
+            }catch(Exception e1){
+                //Code handling exception1
+            }
+        } catch(Exception e2){
+            //Code handling exception2
+        }
+    } catch(Exception e3){
+        //Code handling exception3
+    }
 
 9) What does it mean to rethrow an exception?
-
+    It means to catch and exception in a method and also throw it in the catch part of the try-catch, so that it can
+    be also handled by the method that called the first method int it's own way.
 10) What are the 7 methods that come with the Throwable class?
+     Throwable 	fillInStackTrace()
+        ->  Fills in the execution stack trace.
+
+     Throwable 	getCause()
+        ->  Returns the cause of this throwable or null if the cause is nonexistent or unknown.
+
+     String 	getLocalizedMessage()
+        ->  Creates a localized description of this throwable.
+
+     String 	getMessage()
+        ->  Returns the detail message string of this throwable.
+
+     StackTraceElement[] 	getStackTrace()
+        ->  Provides programmatic access to the stack trace information printed by printStackTrace().
+
+     Throwable[] 	getSuppressed()
+        ->  Returns an array containing all of the exceptions that were suppressed,
+            typically by the try-with-resources statement, in order to deliver this exception.
+
+     Throwable 	initCause(Throwable cause)
+        ->  Initializes the cause of this throwable to the specified value.
+
+     void 	printStackTrace()
+        ->  Prints this throwable and its backtrace to the standard error stream.
+
+     void 	printStackTrace(PrintStream s)
+        ->  Prints this throwable and its backtrace to the specified print stream.
+
+     void 	printStackTrace(PrintWriter s)
+        ->  Prints this throwable and its backtrace to the specified print writer.
+
+     void 	setStackTrace(StackTraceElement[] stackTrace)
+        ->  Sets the stack trace elements that will be returned by getStackTrace() and printed by printStackTrace() and related methods.
 
 11) What does the "finally" block do?
-
+    It executes a piece of code regardless of what happens in the try or catch block
 12) When is the finally block executed? Will it ever not be executed?
-
+    It executes after the try or catch blocks have finished successfully.
+    The only way it could not execute is if there an error occurs in the JVM or if the program is manually terminated.
 13) What are the three recently added features to Java exceptions?
+    try-with-resources  -> it supports automatic resource management.
+    multi-catch         -> it allows to catch multiple exceptions in a single catch statement
+

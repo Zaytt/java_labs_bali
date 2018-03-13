@@ -24,8 +24,6 @@ public class QueueThread implements Runnable{
                 }
         }
 
-
-
         try {
 
             Thread.sleep(500);

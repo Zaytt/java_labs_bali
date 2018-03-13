@@ -1,39 +1,65 @@
 
 1) What is the difference between a byte stream and a character stream?
+    A stream is a way to sequentially accessing a file.
+    A byte stream reads the file byte byte byte while the character stream reads it character by character.
 
 
 2) List at least 3 examples of byte stream classes?
-
+    BufferedInputStream
+    BufferedOutputStream
+    ByteArrayInputStream
+    ByteArrayOutputStream
 
 3) List at least 3 examples of character stream classes?
-
+    BufferedReader
+    BufferedWriter
+    FileReader
+    FileWriter
 
 4) What is try-with-resources? Why is it super cool?
-
+    try-with-resources allows us to declare streams as parameters in a try-catch block that
+    will automatically close when the try-catch finishes.
 
 5) Demonstrate a try-wth-resources block:
 
+    //This try-with-resources uses and closes and SQL statement object
+
+    try (Statement stmt = con.createStatement()) {
+        //DO STUFF
+    }catch (SQLException e) {
+             e.printStack();
+    }
 
 6) What does the read() method on the FileInputStream class return?
+    An int containing the next byte of data.
 
-
-7) What is the documentation above of the FileInputStream class header say? (hint: inside /** ... */)
-
+7) What does the documentation above of the FileInputStream class header say? (hint: inside /** ... */)
+     * A <code>FileInputStream</code> obtains input bytes
+     * from a file in a file system. What files
+     * are  available depends on the host environment.
+     *
+     * <p><code>FileInputStream</code> is meant for reading streams of raw bytes
+     * such as image data. For reading streams of characters, consider using
+     * <code>FileReader</code>.
 
 8) Is a DataOutputStream used for bytes or characters?
-
+    Bytes
 
 9) What is a BufferedReader?
-
+    It's a Buffered input character stream.
+    It reads text from a character-input stream, buffering characters so as to
+    provide for the efficient reading of characters, arrays, and lines.
 
 10) Why does a BufferedReader require an InputStreamReader as an argument?
+     Because InputStreamReader is a bridge from byte streams to character streams: It
+     reads bytes and decodes them into characters using a specified charset.
 
-
-11) What does the InputStreamReader dp with it's byte stream argument?
-
+11) What does the InputStreamReader do with it's byte stream argument?
+    It decodes it into readable characters.
 
 12) What is the difference between the read() and readLine() on BufferedReader?
-
+    One reads one character and the other reads a whole line of text.
+    A line of text is terminated with a carriage return '\n'
 
 13) Demonstrate instantiating a BufferedReader that will read a file called "yucatan_cenotes.txt"
-
+    BufferedReader in = new BufferedReader(new FileReader(new File("yucatan_cenotes.txt")));

@@ -1,12 +1,16 @@
 1) Turn the following into a Generic interface:
 
-   public interface Consumer {
-       public void consume(String parameter)
+   public interface Consumer<T> {
+       public void consume(T parameter)
    }
 
 2) What are a few advantages of using Generic types?
+    It allows you to use the functionality of a class among a diverse set of data types, saving code and avoiding
+    redundancy.
 
 3) What is Type Erasure?
+    Its the way the Java compiler deals with generic types. It replaces the generic types with Object or their
+    bound type to make sure that the produced bytecode contains only ordinary classes, interfaces and methods.
 
 4) Assuming the following snippet:
 
@@ -18,10 +22,18 @@
     Integer i = returnType(1);
     String s = returnType("String");
 
+    Yes
+
 5) What is a Bounded Type Parameter?
-
+    It is a parameter that extends a class, therefore it is contained within the possible subclasses of that class.
+    This is used to delimit the data types that a generic type will use.
 6) Demonstrate the use of Generic Wildcard in a method signature:
-
+    boolean absEqual(NumericFns<?> ob)
 7) What are bounded and unbounded wildcards in Generics?
-
+    They are similar to bounded type parameters. Bounded wildcards are used to make sure that a method makes
+    use of a parameter that inherits a specified class, effectively limiting the type of classes that can be uses
+    in that method.
+    Unbounded wildcards don't have this constraint.
 8) What is difference between List<? extends T>  and  List <? super T> ?
+    List<? extends T> means that you can only pass subclasses of the bound.
+    List <? super T>  means that you can only pass superclasses of the bound.

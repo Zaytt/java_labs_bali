@@ -15,7 +15,21 @@ Complete the code so that it prints the following lines:
 **/
 
 public class Exercise_01 <T> {
+    public static void main(String[] args) {
+        Integer[] intArray = {1,2,3};
+        String[] stringArray = {"Hello", "World"};
 
+        Exercise_01<Integer> ex1 = new Exercise_01<Integer>();
+        Exercise_01<String> ex2 = new Exercise_01<String>();
+
+        ex1.printArray(intArray);
+        ex2.printArray(stringArray);
+    }
+
+    public void printArray(T[] array){
+        for (T x: array)
+            System.out.println(x);
+    }
 }
 
 
